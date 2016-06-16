@@ -1,0 +1,45 @@
+Source: dublin-traceroute
+Section: net
+Priority: optional
+Maintainer: Federico Ceratto <federico@debian.org>
+Build-Depends: debhelper (>=9),
+ cmake,
+ libpcap-dev,
+ libtins3.4,
+ libtins-dev (>=3.4)
+Standards-Version: 3.9.6
+Homepage: https://dublin-traceroute.net
+Vcs-Git: https://anonscm.debian.org/collab-maint/dublin-traceroute.git
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/dublin-traceroute.git
+
+Package: dublin-traceroute
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libdublintraceroute0
+Description: NAT-aware multipath tracerouting tool
+ Dublin Traceroute uses the techniques invented by the authors of
+ Paris-traceroute to enumerate the paths of ECMP flow-based load balancing,
+ but also introduces a new technique for NAT detection. It forges the IP ID
+ in the probe packet and analyzes the responses in order to detect all the
+ encountered NATs.
+
+Package: libdublintraceroute0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: NAT-aware multipath tracerouting tool (library)
+ Dublin Traceroute uses the techniques invented by the authors of
+ Paris-traceroute to enumerate the paths of ECMP flow-based load balancing,
+ but also introduces a new technique for NAT detection. It forges the IP ID
+ in the probe packet and analyzes the responses in order to detect all the
+ encountered NATs.
+ This package contains a dynamic library.
+
+Package: libdublintraceroute-dev
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: NAT-aware multipath tracerouting tool (dev)
+ Dublin Traceroute uses the techniques invented by the authors of
+ Paris-traceroute to enumerate the paths of ECMP flow-based load balancing,
+ but also introduces a new technique for NAT detection. It forges the IP ID
+ in the probe packet and analyzes the responses in order to detect all the
+ encountered NATs.
+ This package contains development files.
